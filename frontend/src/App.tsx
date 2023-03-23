@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ReactDOM from 'react-dom';
 
 const teams = [
   {"tid": 159, "cid": 0, "did": 0, "school": "Boston College", "name": "Eagles", "abbrev": "BC", "pop": 161, "city": "Chestnut Hill", "state": "MA", "latitude": 42.330, "longitude": -71.166},
@@ -333,10 +332,12 @@ class Team extends React.Component <{school: string; name: string; city: string;
 
     return (
       <div>
-        <h3>{oneTeam.school}</h3>
-        <h3>{oneTeam.name}</h3>
-        <h3>{oneTeam.city}</h3>
-        <h3>{oneTeam.state}</h3>
+        <h2>{oneTeam.school}</h2>
+        <ul>
+          <li><h3>Mascot: {oneTeam.name}</h3></li>
+          <li><h3>City: {oneTeam.city}</h3></li>
+          <li><h3>State: {oneTeam.state}</h3></li>
+        </ul>
       </div>
     );
   }
@@ -365,31 +366,5 @@ function App(){
   )
 }
 
-ReactDOM.render(
-  <App/>, // calls app function in tag
-  document.getElementById('mountNode')
-  );
-
 
 export default App;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
